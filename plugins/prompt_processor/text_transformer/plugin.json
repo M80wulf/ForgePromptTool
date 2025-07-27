@@ -1,0 +1,46 @@
+{
+  "id": "text_transformer",
+  "name": "Text Transformer",
+  "version": "1.0.0",
+  "description": "Transform text case and format in prompts",
+  "author": "Prompt Organizer Team",
+  "author_email": "team@promptorganizer.com",
+  "website": "https://promptorganizer.com/plugins/text-transformer",
+  "license": "MIT",
+  "plugin_type": "prompt_processor",
+  "entry_point": "main.py",
+  "dependencies": [],
+  "permissions": [
+    "read_prompts",
+    "write_prompts"
+  ],
+  "min_app_version": "1.0.0",
+  "settings_schema": {
+    "default_case": {
+      "type": "choice",
+      "label": "Default Case Transform",
+      "choices": ["none", "upper", "lower", "title", "sentence"],
+      "default": "none"
+    },
+    "preserve_formatting": {
+      "type": "boolean",
+      "label": "Preserve Original Formatting",
+      "default": true
+    },
+    "transform_variables": {
+      "type": "boolean",
+      "label": "Transform Variables Too",
+      "default": false
+    }
+  },
+  "menu_items": [
+    {
+      "text": "Transform to Uppercase",
+      "action": "transform_upper"
+    },
+    {
+      "text": "Transform to Lowercase",
+      "action": "transform_lower"
+    }
+  ]
+}
